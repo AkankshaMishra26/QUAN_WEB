@@ -1,38 +1,149 @@
-.App {
+/* General reset and body styling */
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+  background-image: url('C:\\Users\\Akanksha Mishra\\Desktop\\quan-comp-club\\quantum-computing-club\\public\\quanbackground.jpg'); /* Updated path */
+  background-size: cover;
+  background-position: center;
+  height: 100%;
+}
+
+.app {
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+/* Header styling */
+header {
+  display: flex;
+  flex-direction: column; /* Stack nav and logo vertically */
+  align-items: center; /* Center-align the content horizontally */
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
-@keyframes App-logo-spin {
+nav {
+  margin-bottom: 30px; /* Reduced space between nav and logo */
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  gap: 20px;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px; /* Adjust font size as needed */
+}
+
+nav ul li a:hover {
+  text-decoration: underline; /* Underline on hover for better visibility */
+}
+
+/* Logo container for 3D rotation and revolution */
+.logo {
+  perspective: 1000px; /* Add perspective to the container */
+}
+
+.logo-inner {
+  width: 300px; /* Size of the container */
+  height: 300px; /* Size of the container */
+  position: relative;
+}
+
+.logo img {
+  width: 100%; /* Make the image fill the container */
+  height: auto; /* Maintain aspect ratio */
+  transform-style: preserve-3d; /* Ensure 3D effect is preserved */
+  animation: logo-rotation 5s linear infinite; /* Rotation animation */
+}
+
+/* Keyframes for rotating the logo in 3D */
+@keyframes logo-rotation {
   from {
-    transform: rotate(0deg);
+    transform: rotateY(0deg); /* Start position */
   }
   to {
-    transform: rotate(360deg);
+    transform: rotateY(360deg); /* Full rotation */
   }
+}
+
+/* Keyframes for revolving the logo */
+@keyframes logo-revolution {
+  from {
+    transform: rotate(0deg); /* Start position */
+  }
+  to {
+    transform: rotate(360deg); /* Full revolution */
+  }
+}
+
+/* About section */
+.about {
+  padding: 50px 50px 50px 50px; /* Adjust padding to control spacing */
+}
+
+.about h1 {
+  font-size: 40px; 
+  margin-top: 5px; /* Reduced margin to bring h1 closer to the logo */
+  margin-bottom: 100px; /* Adjust margin below heading */
+}
+
+.about-content {
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* Vision & Mission Hexagons */
+.vision-mission {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  margin-top: 50px;
+  padding-bottom: 50px;
+}
+
+.hex {
+  width: 220px;
+  height: 240px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  background-color: #50d1a4;
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  color: white;
+  font-weight: bold;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s;
+}
+
+.hex:hover {
+  transform: scale(1.05);
+}
+
+.hex h2 {
+  margin: 10px 0;
+  font-size: 24px;
+}
+
+.hex p {
+  font-size: 16px;
+  margin-top: 50px;
+  text-align: center;
+  line-height: 1.6;
+  max-width: 180px;
+}
+
+.hex-logo {
+  width: 120px;
+  margin-bottom: 15px;
 }
